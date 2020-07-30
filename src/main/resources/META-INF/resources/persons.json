@@ -1,0 +1,26 @@
+[
+{
+address: {
+avenue: "Avenida Central",
+city: "Lima",
+id: 0,
+number: 1131
+},
+age: 20,
+id: 0,
+name: "Fernando",
+surname: "Arevalo"
+},
+{
+address: {
+avenue: "Avenida Brasil",
+city: "Arequipa",
+id: 1,
+number: 940
+},
+age: 20,
+id: 1,
+name: "Juan",
+surname: "Perez"
+}
+]

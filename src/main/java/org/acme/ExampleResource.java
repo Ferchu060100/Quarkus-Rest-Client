@@ -1,4 +1,6 @@
 package org.acme;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.print.attribute.standard.Media;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -9,18 +11,22 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
+/*Principio S(Una sola responsabilidad)
+Se cumple ya que poseemos un Resource para
+Manejar el Restful
+ */
+@ApplicationScoped
 @Path("/mis-datos")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ExampleResource {
-    private Set<Person> persons= Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
+
+    private PersonDao personDao = new PersonDao();
     public ExampleResource(){
-        persons.add(new Person(0,"Fernando","Arevalo",20,new Address(0,"Lima","Avenida Central",1131)));
-        persons.add(new Person(1,"Juan","Perez",20,new Address(1,"Arequipa","Avenida Brasil",940)));
     }
 
     @GET
     public Set<Person> hello() {
-        return persons;
+        return personDao.getAll();
     }
 }
