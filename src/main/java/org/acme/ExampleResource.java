@@ -15,11 +15,8 @@ import java.util.Set;
 public class ExampleResource {
     private Set<Person> persons= Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
     public ExampleResource(){
-        persons.add(new Person(0,"Fernando","Arevalo",20));
-        persons.add(new Person(1,"Juan","Perez",20));
-        for (Person person: persons) {
-            System.out.println(person);
-        }
+        persons.add(new Person(0,"Fernando","Arevalo",20,new Address(0,"Lima","Avenida Central",1131)));
+        persons.add(new Person(1,"Juan","Perez",20,new Address(1,"Arequipa","Avenida Brasil",940)));
     }
 
     @GET

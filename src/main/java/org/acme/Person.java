@@ -1,7 +1,12 @@
 package org.acme;
-import io.quarkus.runtime.annotations.RegisterForReflection;
 
 public class Person {
+    private int id;
+    private String name;
+    private String surname;
+    private int age;
+    private Address address;
+
     public String getName() {
         return name;
     }
@@ -26,18 +31,22 @@ public class Person {
         this.age = age;
     }
 
-    private int id;
-    private String name;
-    private String surname;
-    private int age;
-    public Person(){
-
+    public Address getAddress() {
+        return address;
     }
-    public Person(int id,String name,String surname,int age){
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Person(){
+    }
+    public Person(int id,String name,String surname,int age,Address address){
         this.id=id;
         this.name= name;
         this.surname=surname;
         this.age=age;
+        this.address = address;
     }
     public Person(String name,String surname,int age){
         this.name= name;
