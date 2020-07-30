@@ -17,9 +17,6 @@ public class ExampleResource {
     public ExampleResource(){
         persons.add(new Person(0,"Fernando","Arevalo",20,new Address(0,"Lima","Avenida Central",1131)));
         persons.add(new Person(1,"Juan","Perez",20,new Address(1,"Arequipa","Avenida Brasil",940)));
-        for (Person person: persons) {
-            System.out.println(person);
-        }
     }
 
     @GET
